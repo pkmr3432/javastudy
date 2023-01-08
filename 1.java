@@ -114,3 +114,133 @@ public class Main {
  * 
  * 
  */
+
+
+
+-----------------------------------------------------------------------------------------------
+	
+	
+	
+	class Animal{
+    String name;
+    int weight;
+    String place;
+
+    public Animal(
+        String _name, int _weight, String _place
+    )
+    {
+    name = _name;
+    weight = _weight;
+    place = _place;
+    }
+
+    public void printAnimalDetails(){
+        System.out.println("The Weight Of " + this.name + " is " + this.weight +"kg and they belongs from " + this.place);
+    }
+
+    public class Main{
+        public static void main(String[] args) {
+        
+            new Animal("Cheeta", 54, "Saharah-Africa").printAnimalDetails();
+            new Animal("Elephant", 5000, "Africa").printAnimalDetails();
+            new Animal("Giraff", 45, "Savannahs-Africa").printAnimalDetails();
+                }
+        
+        }
+}
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+	
+	class Birds{
+    String name;
+    int age;
+    
+    public Birds(
+        String _name, int _age
+    )
+    {
+    name = _name;
+    age = _age;
+    }
+
+    public void printBirdsDetails(){
+        System.out.println("The name of Bird is " + this.name + " and its age is  " + this.age);
+    }
+
+    public class Main{
+        public static void main(String[] args) {
+        
+            new Birds("Parrot", 54).printBirdsDetails();
+            new Birds("Duck", 59).printBirdsDetails();
+            new Birds("Kite", 50).printBirdsDetails();
+                }
+        
+        }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+	
+	class Laptop{
+    String name;
+    int model;
+    int price;
+
+    public Laptop(
+        String _name, int _model, int _price
+    )
+    {
+    name = _name;
+    model = _model;
+    price = _price;
+    }
+
+    public void printLaptopDetails(){
+        System.out.println("The name of laptop is " + this.name + " ,model " + this.model +" and the price is " + this.price);
+    }
+
+    public class Main{
+        public static void main(String[] args) {
+        
+            new Laptop("Lenovo", 5462, 32000).printLaptopDetails();
+            new Laptop("Dell", 3521, 55000).printLaptopDetails();
+            new Laptop("Asus", 505, 78000).printLaptopDetails();
+                }
+        
+        }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+	
+	class Mobile{
+    String name;
+    int model;
+    int price;
+
+    public Mobile(
+        String _name, int _model, int _price
+    )
+    {
+    name = _name;
+    model = _model;
+    price = _price;
+    }
+
+    public void printMobileDetails(){
+        System.out.println("Mobile name is  " + this.name + " ,model " + this.model +" and the price is " + this.price);
+    }
+
+    public class Main{
+        public static void main(String[] args) {
+        
+            new Mobile("IPhone", 6, 32000).printMobileDetails();
+            new Mobile("Nokia", 6600, 55000).printMobileDetails();
+            new Mobile("Samsung", 5230, 78000).printMobileDetails();
+                }
+        
+        }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
