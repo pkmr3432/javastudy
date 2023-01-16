@@ -1,3 +1,14 @@
+/*
+Constructors
+Inheritance
+Method Overriding and holding
+Polymorphism
+Nested
+Arguments and wrapping
+Arrays
+Exception Handling
+*/
+
 import javax.swing.JFrame;
 
 
@@ -21,18 +32,69 @@ class Car {
 	String name;
 	int cc;
 	String modelNo;
-	int average;
+	int average; // km/litre
+	String category;
 	
-	public Car(String _name,int _cc,String _modelNo,int _average) { // whenever object is created using new for example "new Car()" constructor will be called
+	public Car(String _name,int _cc, String _modelNo, int _average, String _category) { // whenever object is created using new for example "new Car()" constructor will be called
 		name = _name;
 		cc = _cc;
 		modelNo = _modelNo;
 		average = _average;
+		category = _category;
 	}
 	
 	public void printCarDetails() {
-		System.out.println("The car " + this.name + " has " + this.cc + " cc and " + this.modelNo + " model no and " + this.average + " average");
+		System.out.println("The car " + this.name + " has " + this.cc + " cc and " + this.modelNo + " model no and " + this.average + " average and category is" + this.category);
 	}
+	
+	public int giveFuelRequiredForJourney(int distanceInKm) {
+		int fuelRequired = distanceInKm / average;
+		System.out.println("Fuel required for " + distanceInKm + "km is " + fuelRequired + "litre");
+		return distanceInKm / average;
+	}
+}
+
+class SuperCar {
+	String name;
+	int cc;
+	String modelNo;
+	int average;
+	String category;
+	String vEngineCategory;
+	
+	public SuperCar(String _name,int _cc, String _modelNo, int _average, String _category, String _vEngineCategory) { // whenever object is created using new for example "new Car()" constructor will be called
+		name = _name;
+		cc = _cc;
+		modelNo = _modelNo;
+		average = _average;
+		category = _category;
+		vEngineCategory = _vEngineCategory;
+	}
+	
+	public void printCarDetails() {
+		System.out.println("---- This is a super car ----");
+		System.out.println("The car " + this.name + " has " + this.cc + " cc and " + this.modelNo + " model no and " + this.average + " average and category is" + this.category + "and v engine category is " + this.vEngineCategory);
+		System.out.println("-----------------------------");
+	}
+	
+	public int giveFuelRequiredForJourney(int distanceInKm) {
+		return distanceInKm / average;
+	}
+}
+
+class SuperCar1 extends Car { // this is inheritance
+	String vEngineCategory;
+	public SuperCar1(String _name, int _cc, String _modelNo, int _average, String _category, String vEngineCategory) {
+		super(_name, _cc, _modelNo, _average, _category); // calling the constructor of parent class
+		this.vEngineCategory = vEngineCategory; // you can write it as vEngineCategory = _vEngineCategory;
+	}
+	
+	public void printCarDetails() { // this method overrides parent pritnCarDetails method
+		System.out.println("---- This is a super car ----");
+		System.out.println("The car " + this.name + " has " + this.cc + " cc and " + this.modelNo + " model no and " + this.average + " average and category is" + this.category + "and v engine category is " + this.vEngineCategory);
+		System.out.println("-----------------------------");
+	}
+	
 }
 
 public class Main {
@@ -68,33 +130,39 @@ public class Main {
 		String car5ModelNo = "lxi";
 		int car5Average = 20;
 		
+		String car6 = "lamborgani";
+		int car6CC = 3000;
+		String car6ModelNo = "xyz";
+		int car6Average = 3;
+		String car6category = "supercar";
+		String vengineVersion = "v8";
+		
+		
 		System.out.println("The car " + car1 + " has " + car1CC + " cc and " + car1ModelNo + " model no and " + car1Average + " average");
 		System.out.println("The car " + car2 + " has " + car2CC + " cc and " + car2ModelNo + " model no and " + car2Average + " average");
 		System.out.println("The car " + car3 + " has " + car3CC + " cc and " + car3ModelNo + " model no and " + car3Average + " average");
 		System.out.println("The car " + car4 + " has " + car4CC + " cc and " + car4ModelNo + " model no and " + car4Average + " average");
 		System.out.println("The car " + car5 + " has " + car5CC + " cc and " + car5ModelNo + " model no and " + car5Average + " average");
+		System.out.println("The car " + car6 + " has " + car6CC + " cc and " + car6ModelNo + " model no and " + car6Average + " average and category is" + car6category);
 		
 		
-		new Car("swift", 1200, "lxi", 20).printCarDetails();
-		new Car("nexon", 1200, "lxi", 20).printCarDetails();
-		new Car("honda", 1200, "lxi", 20).printCarDetails();
-		new Car("innova", 1200, "lxi", 20).printCarDetails();
-		new Car("safari", 1200, "lxi", 20).printCarDetails();
-
+		Car swift = new Car("swift", 1200, "lxi", 20, "normal");
+		swift.printCarDetails();
+		swift.giveFuelRequiredForJourney(100);
+		new Car("nexon", 1200, "lxi", 20, "normal").printCarDetails();
+		new Car("honda", 1200, "lxi", 20, "normal").printCarDetails();
+		new Car("innova", 1200, "lxi", 20, "normal").printCarDetails();
+		new Car("safari", 1200, "lxi", 20, "normal").printCarDetails();
+		new Car("lamborghani", 3000, "lxi", 2, "supercar").printCarDetails();
 		
-
-		//Creating the window with all its awesome snaky features
-//		Window f1= new Window();
+		new SuperCar("lamborghani", 1200, "lxi", 20, "supercar", "v8").printCarDetails();
 		
-		//Setting up the window settings
-//		f1.setTitle("Snake");
-//		f1.setSize(300,300);
-//		f1.setVisible(true);
-//		f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);             
+		SuperCar1 lamb = new SuperCar1("lamborghani", 3000, "lxi", 2, "supercar", "v8");
+		lamb.printCarDetails();
+		lamb.giveFuelRequiredForJourney(100);            
 
 	}
 }
-
 /**
  * 
  * Create class for following:
@@ -243,4 +311,22 @@ public class Main {
         }
 }
 
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+	
+	
+/**
+ * 
+ * Create subclasses for following:
+ * 
+ * Animal: Reptile, Domestic
+ * Clothing: Winterwear, MensWear  
+ * Person: Worker, Businessman
+ * 
+ * // read about inheritance, overriding methods
+ * 
+ * 
+ */
