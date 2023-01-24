@@ -330,3 +330,66 @@ public class Main {
  * 
  * 
  */
+	
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+	class Report{  
+    void report(){System.out.println("Medical Report Of the Person");}  
+    }  
+    class Ramesh extends Report{  
+    void status1(){System.out.println("Ramesh is Mentally Ill");}  
+    
+    }  
+    class Suresh extends Ramesh{  
+    void status2(){System.out.println("Suresh is Mentally Fit");}   
+    }  
+    class Person{  
+    public static void main(String args[]){  
+    Suresh s=new Suresh();
+    s.report();  
+    s.status1();  
+    s.status2();    
+    }}  
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	class Cloth{  
+    void sale(){System.out.println("End season sale");}  
+    }  
+    class MensWear extends Cloth{  
+    void winter(){System.out.println("50% of on WinterWears");}  
+    
+    }  
+    class WomensWear extends MensWear{  
+    void summer(){System.out.println("80% of on SummerWears");}   
+    }  
+    class Clothing2{  
+    public static void main(String args[]){  
+    WomensWear w=new WomensWear();
+    w.sale();  
+    w.winter();  
+    w.summer();    
+    }}  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	class Animal{  
+    void eat(){System.out.println("all are eating...");}  
+    }  
+    class Dog extends Animal{  
+    void domestic(){System.out.println("Dog is a Domestic animal");}  
+    }  
+    class Lion extends Dog{  
+    void wild(){System.out.println("lion is a wild animal");}  
+    }  
+    class Animal2{  
+    public static void main(String args[]){  
+    Lion l=new Lion();  
+    l.domestic();  
+    l.wild();  
+    l.eat();  
+    }}  
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
